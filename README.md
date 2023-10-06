@@ -1,4 +1,4 @@
-# Alx Interview
+# ALX Interview
 
 > Projects meant to simulate interview situations
 
