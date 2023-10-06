@@ -1,5 +1,3 @@
-Certainly! Here's a short README.md file for the "Lockboxes" project:
-
 # Lockboxes
 
 ## INFO 
