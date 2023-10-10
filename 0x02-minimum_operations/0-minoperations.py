@@ -24,15 +24,13 @@ def minOperations(n):
     if n <= 0:
         return 0
 
-    # initialize array to store minimum operations for each position
-    min_op = [float('inf')] * (n + 1)
-
-    min_op[1] = 0
-
-    # get minimum operations for each position from 2 to n
-    for i in range(2, n + 1):
-        for j in range(1, i):
-            if i % j == 0:
-                min_op[i] = min(min_op[i], min_op[j] + i // j)
-
-    return min_op[n] if min_op[n] != float('inf') else 0
+    # initialize lsit to store minimum operations for each position
+    min_op = []
+    i = 1
+    while n != 1:
+        i += 1
+        if n % i == 0:
+            while n % i == 0:
+                n /= i
+                min_op.append(i)
+    return sum(min_op)
