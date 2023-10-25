@@ -8,13 +8,16 @@ def validUTF8(data):
     '''validUTF8():
     Determines if a given data set represents a valid UTF-8 encoding.
 
+    check if the most significant bit of the byte is set to 0
+    (a single-byte character)
+    ELSE if the two MSB of the byte are 10 (a following byte)
+
     Return: True if data is a valid UTF-8 encoding, else return False
     '''
 
     seq_bytes = 0
 
-    '''check if the most significant bit of the byte is set to 0
-    (a single-byte character)
+    '''
     '''
     for num in data:
         if seq_bytes == 0:
@@ -29,7 +32,6 @@ def validUTF8(data):
             else:
                 return False
         else:
-            # if the two MSB of the byte are 10 (a following byte)
             if num >> 6 == 0b10:
                 seq_bytes -= 1
             else:
