@@ -17,24 +17,45 @@ def validUTF8(data):
 
     seq_bytes = 0
 
-    '''
-    '''
-    for num in data:
+    for number in data:
+        bin_sequence = format(number, '#010b')[-8:]
+
         if seq_bytes == 0:
-            if num >> 7 == 0b0:
+            for bit in bin_sequence:
+                if bit == '0':
+                    break
+                seq_bytes += 1
+
+            if seq_bytes == 0:
                 continue
-            elif num >> 5 == 0b110:
-                seq_bytes = 1
-            elif num >> 4 == 0b1110:
-                seq_bytes = 2
-            elif num >> 3 == 0b11110:
-                seq_bytes = 3
-            else:
+
+            if seq_bytes == 1 or seq_bytes > 4 == 0b1110:
                 return False
         else:
-            if num >> 6 == 0b10:
-                seq_bytes -= 1
-            else:
+            if not (bin_sequence[0] == '1' and bin_sequence[1] == '0'):
                 return False
 
+        seq_bytes -= 1
+
     return seq_bytes == 0
+
+    # seq_bytes = 0
+    # for num in data:
+    #     if seq_bytes == 0:
+    #         if num >> 7 == 0b0:
+    #             continue
+    #         elif num >> 5 == 0b110:
+    #             seq_bytes = 1
+    #         elif num >> 4 == 0b1110:
+    #             seq_bytes = 2
+    #         elif num >> 3 == 0b11110:
+    #             seq_bytes = 3
+    #         else:
+    #             return False
+    #     else:
+    #         if num >> 6 == 0b10:
+    #             seq_bytes -= 1
+    #         else:
+    #             return False
+
+    # return seq_bytes == 0
