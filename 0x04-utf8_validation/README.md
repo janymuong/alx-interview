@@ -1,6 +1,6 @@
 # UTF-8 Validation
 
-> Note  
+> **Note**  
 > WHAT `utf-8` IS:  
 >> `UTF-8` stands for "***Unicode Transformation Format 8-bit***". Is a widely used character encoding standard for representing text and symbols from the Unicode character set. `Unicode` is a character encoding system that aims to cover the characters and symbols of all the world's written languages, as well as many special symbols used in computing and other fields. UTF-8 is one of several encoding schemes used to represent Unicode characters. It sloves massive compatibility issues related to character encodiong.  
 
