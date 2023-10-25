@@ -29,7 +29,7 @@ def validUTF8(data):
             if seq_bytes == 0:
                 continue
 
-            if seq_bytes == 1 or seq_bytes > 4:
+            if seq_bytes == 1 or seq_bytes > 4:  # == 0b1110
                 return False
         else:
             if not (bin_sequence[0] == '1' and bin_sequence[1] == '0'):
