@@ -1,6 +1,6 @@
 # Star Wars API
 > **Note**  
->> scraping `API` data from: [Star Wars API](https://swapi-api.alx-tools.com/api/films)
+>> scraping `API` data from: [Star Wars API](https://swapi-api.alx-tools.com/api/films)  
 >> uses the JavaScript `request` module.
 
 ## Specifictaion
