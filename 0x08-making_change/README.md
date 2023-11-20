@@ -38,7 +38,7 @@ def makeChange(coins, total):
 ## Usage
 
 ```python
-from coin_change import makeChange
+from 0-making_change import makeChange
 
 # example 1
 result1 = makeChange([1, 2, 25], 37)
