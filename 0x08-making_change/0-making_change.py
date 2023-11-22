@@ -11,19 +11,20 @@ def makeChange(coins, total):
     from a pile of coins of different values...
     '''
 
-    if total < 0 or any(coin < 0 for coin in coins):
-        return -1  # Invalid input
+    if total <= 0:
+        return 0
 
-    coins.sort(reverse=True)
-
-    dp = [float('inf')] * (total + 1)
-    dp[0] = 0
-
-    for coin in coins:
-        for amount in range(coin, total + 1):
-            dp[amount] = min(dp[amount], dp[amount - coin] + 1)
-
-    return dp[total] if dp[total] != float('inf') else -1
+    else:
+        dp = sorted(coins)
+        dp.reverse()
+        dp_count = 0
+        for i in dp:
+            while (total >= i):
+                dp_count += 1
+                total -= i
+        if total == 0:
+            return dp_count
+        return -1
 
     # if total <= 0:
     #     return 0
