@@ -3,7 +3,7 @@
 '''
 
 
-def isWinner(x, nums):
+def is_winner(x, nums):
     '''prime game implementation
     args
         x is the number of rounds and nums is an array of n
@@ -14,23 +14,24 @@ def isWinner(x, nums):
     if x is None or nums is None or x == 0 or nums == []:
         return None
 
-    mariaWins = benWins = 0
+    mariaWins = 0
+    benWins = 0
 
     for i in range(x):
-        primes = findPrime(nums[i])
+        primes = get_prime(nums[i])
         if len(primes) % 2 == 0:
             benWins += 1
         else:
             mariaWins += 1
-    if mariaWins > mariaWins:
+    if mariaWins > benWins:
         return f'Maria'
     elif benWins > mariaWins:
         return f'Ben'
     return None
 
 
-def findPrime(n):
-    '''return prime number determined:
+def get_prime(n):
+    '''determine prime numbers:
     '''
     primes = []
     filtered = [True] * (n + 1)
