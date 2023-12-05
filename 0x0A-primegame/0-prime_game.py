@@ -20,9 +20,9 @@ def isWinner(x, nums):
         else:
             mariaWins += 1
     if mariaWins > mariaWins:
-        return f'Maria'
+        return 'Maria'
     elif benWins > mariaWins:
-        return f'Ben'
+        return 'Ben'
     return None
 
 
