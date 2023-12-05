@@ -3,7 +3,7 @@
 '''
 
 
-def is_winner(x, nums):
+def isWinner(x, nums):
     '''prime game implementation
     args
         x is the number of rounds and nums is an array of n
